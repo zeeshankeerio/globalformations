@@ -35,7 +35,6 @@ const nextConfig = {
   
   // Performance
   reactStrictMode: true,
-  swcMinify: true,
   
   // Headers for security
   async headers() {
@@ -66,6 +65,14 @@ const nextConfig = {
           {
             key: 'Referrer-Policy',
             value: 'origin-when-cross-origin'
+          },
+          {
+            key: 'X-Copyright',
+            value: 'Copyright 2025 Zeeshan Keerio / Mindscape Analytics. All Rights Reserved.'
+          },
+          {
+            key: 'X-Legal-Notice',
+            value: 'Proprietary software. Unauthorized use prohibited.'
           }
         ],
       },

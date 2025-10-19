@@ -1,3 +1,13 @@
+/**
+ * Homepage Component
+ * 
+ * Copyright (c) 2025 Zeeshan Keerio / Mindscape Analytics
+ * All Rights Reserved - Proprietary and Confidential
+ * 
+ * Unauthorized copying, modification, or distribution is strictly prohibited.
+ * Contact: zeeshan.keerio@mindscapeanalytics.com
+ */
+
 "use client"
 
 import { useState, useEffect } from "react"

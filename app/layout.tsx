@@ -1,3 +1,13 @@
+/**
+ * Root Layout Component
+ * 
+ * Copyright (c) 2025 Zeeshan Keerio / Mindscape Analytics
+ * All Rights Reserved - Proprietary and Confidential
+ * 
+ * Unauthorized copying, modification, or distribution is strictly prohibited.
+ * Contact: zeeshan.keerio@mindscapeanalytics.com
+ */
+
 import type React from "react"
 import type { Metadata } from "next"
 import { Space_Grotesk, DM_Sans } from "next/font/google"
@@ -90,6 +100,18 @@ export default function RootLayout({
             `,
           }}
         />
+        {/* Copyright & Legal Notice */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              console.log('%c⚠️ COPYRIGHT NOTICE', 'color: red; font-size: 20px; font-weight: bold;');
+              console.log('%cCopyright © 2025 Zeeshan Keerio / Mindscape Analytics', 'color: #1E40AF; font-size: 14px; font-weight: bold;');
+              console.log('%c🚫 UNAUTHORIZED ACCESS PROHIBITED', 'color: red; font-size: 14px; font-weight: bold;');
+              console.log('%cThis is proprietary software. Unauthorized copying, modification, or distribution is strictly prohibited and may result in legal action.', 'color: #666; font-size: 12px;');
+              console.log('%cContact: zeeshan.keerio@mindscapeanalytics.com', 'color: #1E40AF; font-size: 12px;');
+            `,
+          }}
+        />
       </head>
       {/*
         Visual addition: establish a navy/white base with subtle gold accents via Tailwind tokens.
@@ -98,6 +120,20 @@ export default function RootLayout({
       <body className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-slate-100 font-sans" suppressHydrationWarning={true}>
         {/* Accessibility: Skip link to jump to main content */}
         <a href="#main-content" className="skip-link">Skip to main content</a>
+        {/* Copyright Meta Comment */}
+        {/* 
+          ==========================================
+          COPYRIGHT © 2025 Zeeshan Keerio / Mindscape Analytics
+          ALL RIGHTS RESERVED - PROPRIETARY SOFTWARE
+          ==========================================
+          This software is protected by copyright law.
+          Unauthorized copying, modification, or distribution
+          is strictly prohibited and may result in legal action.
+          
+          Contact: zeeshan.keerio@mindscapeanalytics.com
+          Phone: +1-307-210-6155
+          ==========================================
+        */}
         <ErrorBoundary>
           <AccessibilityImprovements />
           {children}

@@ -1,6 +1,26 @@
 # LLC Formation Website - Mindscape Global Formations
 
+**© 2025 Zeeshan Keerio / Mindscape Analytics. All Rights Reserved.**
+
+**PROPRIETARY SOFTWARE - UNAUTHORIZED USE IS PROHIBITED**
+
 A modern, professional website for LLC formation services built with Next.js 15, TypeScript, and Tailwind CSS. Features dual-service offerings: LLC Formation and Software Development (Mindscape Analytics).
+
+---
+
+## ⚖️ Copyright & License
+
+**Copyright (c) 2025 Zeeshan Keerio / Mindscape Analytics**
+
+This software is proprietary and confidential. Unauthorized copying, modification, distribution, or use of this software is strictly prohibited without explicit written permission from the copyright holder.
+
+For licensing inquiries, contact:
+- **Email**: zeeshan.keerio@mindscapeanalytics.com
+- **Phone**: +1-307-210-6155
+
+See [LICENSE](./LICENSE) file for full terms.
+
+---
 
 ## 🌟 Features
 
