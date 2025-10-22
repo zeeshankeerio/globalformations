@@ -29,19 +29,19 @@ export default function MobileNav({ className }: MobileNavProps) {
 
   return (
     <div className={cn("md:hidden", className)}>
-      {/* Mobile menu button */}
+      {/* Mobile menu button - Enhanced touch target */}
       <Button
         variant="ghost"
         size="icon"
         onClick={toggleMenu}
-        className="relative z-50"
+        className="relative z-50 h-12 w-12 p-3 hover:bg-slate-100 active:bg-slate-200 transition-all duration-200"
         aria-label="Toggle mobile menu"
         aria-expanded={isOpen}
       >
         {isOpen ? (
-          <X className="h-6 w-6" />
+          <X className="h-6 w-6 text-slate-700" />
         ) : (
-          <Menu className="h-6 w-6" />
+          <Menu className="h-6 w-6 text-slate-700" />
         )}
       </Button>
 
@@ -53,32 +53,33 @@ export default function MobileNav({ className }: MobileNavProps) {
       {/* Mobile menu */}
       <div
         className={cn(
-          "fixed top-0 right-0 z-40 h-full w-80 max-w-[85vw] bg-background/95 backdrop-blur-md border-l border-border/50 shadow-2xl transform transition-transform duration-300 ease-in-out",
+          "fixed top-0 right-0 z-40 h-full w-full max-w-sm bg-white/96 backdrop-blur-lg border-l border-slate-200/60 shadow-2xl transform transition-transform duration-300 ease-in-out safe-area-padding",
           isOpen ? "translate-x-0" : "translate-x-full"
         )}
       >
         <div className="flex flex-col h-full">
-          {/* Header */}
-          <div className="flex items-center justify-between p-6 border-b border-border/50">
+          {/* Header - Better mobile spacing */}
+          <div className="flex items-center justify-between p-4 sm:p-6 border-b border-slate-200/60 bg-white/80 backdrop-blur-sm">
             <ProfessionalLogo size="sm" variant="light" href="/" />
             <Button
               variant="ghost"
               size="icon"
               onClick={toggleMenu}
+              className="h-12 w-12 p-3 hover:bg-slate-100 active:bg-slate-200 transition-all duration-200"
               aria-label="Close mobile menu"
             >
-              <X className="h-5 w-5" />
+              <X className="h-5 w-5 text-slate-700" />
             </Button>
           </div>
 
-          {/* Navigation items */}
-          <nav className="flex-1 px-6 py-8">
-            <ul className="space-y-6">
-              {/* Services Dropdown */}
+          {/* Navigation items - Improved mobile layout */}
+          <nav className="flex-1 px-4 sm:px-6 py-6 overflow-y-auto">
+            <ul className="space-y-4">
+              {/* Services Dropdown - Enhanced mobile */}
               <li>
                 <button
                   onClick={toggleServices}
-                  className="flex items-center justify-between w-full text-lg font-medium text-slate-700 hover:text-primary transition-colors py-2"
+                  className="flex items-center justify-between w-full text-lg font-semibold text-slate-800 hover:text-blue-600 transition-colors py-3 px-2 rounded-lg hover:bg-slate-50 active:bg-slate-100"
                 >
                   <span className="flex items-center gap-2">
                     Services
@@ -86,22 +87,22 @@ export default function MobileNav({ className }: MobileNavProps) {
                   <ChevronDown className={cn("w-5 h-5 transition-transform duration-300", isServicesOpen && "rotate-180")} />
                 </button>
                 {isServicesOpen && (
-                  <ul className="mt-3 space-y-2 animate-in slide-in-from-top-2 duration-300">
+                  <ul className="mt-3 space-y-3 animate-in slide-in-from-top-2 duration-300">
                     <li>
                       <a
                         href="/services"
                         onClick={toggleMenu}
-                        className="flex items-start gap-3 p-3 rounded-lg bg-gradient-to-r from-blue-50 to-indigo-50 hover:from-blue-100 hover:to-indigo-100 transition-all duration-200 group"
+                        className="flex items-start gap-3 p-4 rounded-xl bg-gradient-to-r from-blue-50 to-indigo-50 hover:from-blue-100 hover:to-indigo-100 transition-all duration-200 group border border-blue-100/50"
                       >
-                        <div className="mt-0.5 p-2 rounded-lg bg-blue-500 group-hover:bg-blue-600 transition-colors duration-200">
-                          <Building2 className="w-4 h-4 text-white" />
+                        <div className="mt-1 p-2.5 rounded-lg bg-blue-500 group-hover:bg-blue-600 transition-colors duration-200 shadow-sm">
+                          <Building2 className="w-5 h-5 text-white" />
                         </div>
-                        <div className="flex-1">
-                          <div className="flex items-center gap-2 font-semibold text-slate-900 mb-0.5">
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center gap-2 font-bold text-slate-900 mb-1 text-base">
                             Business Formation
-                            <ArrowRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200" />
+                            <ArrowRight className="w-4 h-4 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200" />
                           </div>
-                          <span className="text-xs text-slate-600">LLC & Business Setup Services</span>
+                          <span className="text-sm text-slate-600 leading-relaxed">LLC & Business Setup Services</span>
                         </div>
                       </a>
                     </li>
@@ -111,17 +112,17 @@ export default function MobileNav({ className }: MobileNavProps) {
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={toggleMenu}
-                        className="flex items-start gap-3 p-3 rounded-lg bg-gradient-to-r from-purple-50 to-blue-50 hover:from-purple-100 hover:to-blue-100 transition-all duration-200 group"
+                        className="flex items-start gap-3 p-4 rounded-xl bg-gradient-to-r from-purple-50 to-blue-50 hover:from-purple-100 hover:to-blue-100 transition-all duration-200 group border border-purple-100/50"
                       >
-                        <div className="mt-0.5 p-2 rounded-lg bg-purple-500 group-hover:bg-purple-600 transition-colors duration-200">
-                          <Code2 className="w-4 h-4 text-white" />
+                        <div className="mt-1 p-2.5 rounded-lg bg-purple-500 group-hover:bg-purple-600 transition-colors duration-200 shadow-sm">
+                          <Code2 className="w-5 h-5 text-white" />
                         </div>
-                        <div className="flex-1">
-                          <div className="flex items-center gap-2 font-semibold text-slate-900 mb-0.5">
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center gap-2 font-bold text-slate-900 mb-1 text-base">
                             Software Services
-                            <ArrowRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200" />
+                            <ArrowRight className="w-4 h-4 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200" />
                           </div>
-                          <span className="text-xs text-slate-600">AI & Web Development Solutions</span>
+                          <span className="text-sm text-slate-600 leading-relaxed">AI & Web Development Solutions</span>
                         </div>
                       </a>
                     </li>
@@ -134,7 +135,7 @@ export default function MobileNav({ className }: MobileNavProps) {
                   <a
                     href={item.href}
                     onClick={toggleMenu}
-                    className="block text-lg font-medium text-muted-foreground hover:text-primary transition-colors py-2"
+                    className="block text-lg font-medium text-slate-700 hover:text-blue-600 transition-colors py-3 px-2 rounded-lg hover:bg-slate-50 active:bg-slate-100"
                   >
                     {item.label}
                   </a>
@@ -142,13 +143,13 @@ export default function MobileNav({ className }: MobileNavProps) {
               ))}
             </ul>
 
-            {/* CTA Section */}
-            <div className="mt-8 pt-8 border-t border-border/50">
+            {/* CTA Section - Better mobile spacing */}
+            <div className="mt-8 pt-6 border-t border-slate-200/60">
               <ContactButton
                 variant="whatsapp"
                 message="consultation"
                 context="mobile-nav"
-                className="w-full justify-center bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white shadow-lg hover:shadow-primary/25 button-primary"
+                className="w-full justify-center bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white shadow-lg hover:shadow-blue-500/25 py-4 px-6 text-base font-semibold rounded-xl transition-all duration-200"
                 size="lg"
               >
                 Free Consultation
@@ -156,9 +157,9 @@ export default function MobileNav({ className }: MobileNavProps) {
             </div>
           </nav>
 
-          {/* Footer */}
-          <div className="p-6 border-t border-border/50">
-            <p className="text-sm text-muted-foreground text-center">
+          {/* Footer - Better mobile */}
+          <div className="p-4 sm:p-6 border-t border-slate-200/60 bg-slate-50/80">
+            <p className="text-sm text-slate-600 text-center font-medium">
               Start your LLC in 1 day
             </p>
           </div>

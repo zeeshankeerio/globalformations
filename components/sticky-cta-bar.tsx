@@ -97,38 +97,43 @@ export default function StickyCTABar() {
   const ServiceIcon = currentServiceData.icon
 
   return (
-    <div className={`fixed bottom-0 left-0 right-0 z-[90] bg-gradient-to-r ${currentServiceData.gradient} text-white shadow-2xl border-t border-blue-500/20 backdrop-blur-md transition-all duration-700`}>
-      <div className="max-w-7xl mx-auto px-4 py-3">
-        <div className="flex items-center justify-between gap-4">
-          <div className="flex items-center gap-3 transition-all duration-500">
-            <div className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
-              <ServiceIcon className="w-5 h-5 text-white" />
+    <div className={`fixed bottom-0 left-0 right-0 z-[90] bg-gradient-to-r ${currentServiceData.gradient} text-white shadow-2xl border-t border-blue-500/20 backdrop-blur-md transition-all duration-700 safe-area-padding`}>
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 py-2 sm:py-3">
+        <div className="flex items-center justify-between gap-2 sm:gap-4">
+          <div className="flex items-center gap-2 sm:gap-3 transition-all duration-500 min-w-0 flex-1">
+            <div className="w-7 h-7 sm:w-8 sm:h-8 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+              <ServiceIcon className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
             </div>
-            <div>
-              <div className="font-semibold text-sm">{currentServiceData.title}</div>
-              <div className="text-xs text-blue-100">{currentServiceData.subtitle}</div>
+            <div className="min-w-0 flex-1">
+              <div className="font-semibold text-xs sm:text-sm truncate">{currentServiceData.title}</div>
+              <div className="text-xs text-blue-100 hidden sm:block">{currentServiceData.subtitle}</div>
+              <div className="text-xs text-blue-100 sm:hidden truncate">
+                {currentService === 'llc' ? 'From $50' : 'Custom Solutions'}
+              </div>
             </div>
           </div>
           
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1 sm:gap-2 flex-shrink-0">
             {currentService === 'llc' ? (
               <Link href={currentServiceData.buttonLink}>
                 <Button 
                   size="sm" 
-                  className="bg-white text-blue-600 hover:bg-blue-50 font-semibold shadow-lg hover:shadow-xl transition-all duration-200 group"
+                  className="bg-white text-blue-600 hover:bg-blue-50 font-semibold shadow-lg hover:shadow-xl transition-all duration-200 group text-xs sm:text-sm px-2 sm:px-3 h-8 sm:h-9"
                 >
-                  <span>{currentServiceData.buttonText}</span>
-                  <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                  <span className="hidden sm:inline">{currentServiceData.buttonText}</span>
+                  <span className="sm:hidden">Start</span>
+                  <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 ml-1 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
             ) : (
               <a href={currentServiceData.buttonLink} target="_blank" rel="noopener noreferrer">
                 <Button 
                   size="sm" 
-                  className="bg-white text-purple-600 hover:bg-purple-50 font-semibold shadow-lg hover:shadow-xl transition-all duration-200 group"
+                  className="bg-white text-purple-600 hover:bg-purple-50 font-semibold shadow-lg hover:shadow-xl transition-all duration-200 group text-xs sm:text-sm px-2 sm:px-3 h-8 sm:h-9"
                 >
-                  <span>{currentServiceData.buttonText}</span>
-                  <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                  <span className="hidden sm:inline">{currentServiceData.buttonText}</span>
+                  <span className="sm:hidden">Services</span>
+                  <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 ml-1 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </a>
             )}
@@ -138,14 +143,15 @@ export default function StickyCTABar() {
               message={currentService === 'llc' ? "consultation" : "general"}
               context="sticky-bar"
               size="sm"
-              className="border border-white/30 text-white hover:bg-white/10 bg-transparent"
+              className="border border-white/30 text-white hover:bg-white/10 bg-transparent text-xs sm:text-sm px-2 sm:px-3 h-8 sm:h-9"
             >
-              {currentServiceData.ctaButton}
+              <span className="hidden sm:inline">{currentServiceData.ctaButton}</span>
+              <span className="sm:hidden">Call</span>
             </ContactButton>
             
             <button
               onClick={() => setIsDismissed(true)}
-              className="text-white/70 hover:text-white transition-colors p-1"
+              className="text-white/70 hover:text-white transition-colors p-1 min-h-[44px] min-w-[44px] sm:min-h-auto sm:min-w-auto flex items-center justify-center"
               aria-label="Dismiss"
             >
               <X className="w-4 h-4" />

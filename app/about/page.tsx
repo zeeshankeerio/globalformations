@@ -79,41 +79,41 @@ export default function AboutPage() {
       {/* Standardized Navigation */}
       <StandardNavigation currentPage="/about" />
 
-      {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-muted/30 to-background">
+      {/* Hero Section - Mobile optimized */}
+      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-muted/30 to-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <Badge className="mb-6 bg-gradient-to-r from-[#0A2540] to-[#1E40AF] text-white border-0 shadow-md">About Our Company</Badge>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 font-[family-name:var(--font-space-grotesk)] bg-gradient-to-r from-[#0A2540] to-[#1E40AF] bg-clip-text text-transparent">
+          <div className="text-center mb-8 sm:mb-12">
+            <Badge className="mb-4 sm:mb-6 bg-gradient-to-r from-[#0A2540] to-[#1E40AF] text-white border-0 shadow-md text-sm">About Our Company</Badge>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 font-[family-name:var(--font-space-grotesk)] bg-gradient-to-r from-[#0A2540] to-[#1E40AF] bg-clip-text text-transparent leading-tight">
               Your Trusted Partner in Business Formation
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-[family-name:var(--font-dm-sans)]">
+            <p className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto font-[family-name:var(--font-dm-sans)] leading-relaxed">
               Founded in 2025 by Zeeshan Keerio, Mindscape Global Formations brings AI-powered innovation and enterprise-grade expertise to LLC formation, helping entrepreneurs worldwide establish their U.S. businesses with confidence and speed.
             </p>
           </div>
-          {/* Hero Image */}
-          <div className="max-w-5xl mx-auto rounded-3xl overflow-hidden shadow-2xl">
+          {/* Hero Image - Mobile responsive */}
+          <div className="max-w-5xl mx-auto rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl">
             <Image 
               src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=1200&h=600&fit=crop&q=80" 
               alt="Team collaborating on business strategy"
               width={1200}
               height={400}
-              className="w-full h-[400px] object-cover"
+              className="w-full h-[250px] sm:h-[300px] lg:h-[400px] object-cover"
               priority
             />
           </div>
         </div>
       </section>
 
-      {/* Company Story */}
-      <section className="py-20">
+      {/* Company Story - Mobile optimized */}
+      <section className="py-12 sm:py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 font-[family-name:var(--font-space-grotesk)] bg-gradient-to-r from-[#0A2540] to-[#1E40AF] bg-clip-text text-transparent">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 font-[family-name:var(--font-space-grotesk)] bg-gradient-to-r from-[#0A2540] to-[#1E40AF] bg-clip-text text-transparent">
                 Our Story
               </h2>
-              <div className="space-y-4 text-muted-foreground font-[family-name:var(--font-dm-sans)] text-lg leading-relaxed">
+              <div className="space-y-4 text-muted-foreground font-[family-name:var(--font-dm-sans)] text-base sm:text-lg leading-relaxed">
                 <p>
                   Mindscape Global Formations emerged from the success of Mindscape Analytics, our parent company founded in 2018 by visionary entrepreneur Zeeshan Keerio. After building a global leader in AI solutions serving clients across finance, healthcare, retail, and manufacturing, we recognized a critical gap in the market: entrepreneurs worldwide needed a better way to access U.S. business opportunities.
                 </p>
@@ -129,25 +129,25 @@ export default function AboutPage() {
               </div>
             </div>
             <div className="relative">
-              {/* Professional office image */}
-              <div className="mb-8 rounded-3xl overflow-hidden shadow-2xl">
+              {/* Professional office image - Mobile responsive */}
+              <div className="mb-6 sm:mb-8 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl">
                 <Image 
                   src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop&q=80" 
                   alt="Modern professional office workspace"
                   width={800}
                   height={400}
-                  className="w-full h-[400px] object-cover"
+                  className="w-full h-[300px] sm:h-[400px] object-cover"
                 />
               </div>
-              <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-3xl p-8 border border-primary/20">
-                <div className="grid grid-cols-2 gap-6">
+              <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 border border-primary/20">
+                <div className="grid grid-cols-2 gap-4 sm:gap-6">
                   {achievements.map((achievement, index) => (
                     <div key={index} className="text-center">
-                      <div className="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                        <achievement.icon className="w-8 h-8 text-accent" />
+                      <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-accent/10 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                        <achievement.icon className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-accent" />
                       </div>
-                      <div className="text-3xl font-bold text-primary mb-2">{achievement.number}</div>
-                      <div className="font-semibold mb-1 font-[family-name:var(--font-space-grotesk)]">{achievement.label}</div>
+                      <div className="text-2xl sm:text-3xl font-bold text-primary mb-1 sm:mb-2">{achievement.number}</div>
+                      <div className="font-semibold mb-1 font-[family-name:var(--font-space-grotesk)] text-sm sm:text-base">{achievement.label}</div>
                       <div className="text-sm text-muted-foreground font-[family-name:var(--font-dm-sans)]">{achievement.description}</div>
                     </div>
                   ))}
@@ -158,29 +158,29 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Our Values */}
-      <section className="py-20 bg-muted/30">
+      {/* Our Values - Mobile optimized */}
+      <section className="py-12 sm:py-16 lg:py-20 bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 font-[family-name:var(--font-space-grotesk)] bg-gradient-to-r from-[#0A2540] to-[#1E40AF] bg-clip-text text-transparent">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 font-[family-name:var(--font-space-grotesk)] bg-gradient-to-r from-[#0A2540] to-[#1E40AF] bg-clip-text text-transparent">
               Our Core Values
             </h2>
-            <p className="text-xl text-muted-foreground font-[family-name:var(--font-dm-sans)]">
+            <p className="text-base sm:text-lg lg:text-xl text-muted-foreground font-[family-name:var(--font-dm-sans)]">
               The principles that guide everything we do
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             {values.map((value, index) => (
-              <Card key={index} className="trust-shadow border-0 text-center hover:shadow-xl transition-shadow duration-300">
-                <CardHeader>
-                  <div className="w-16 h-16 bg-gradient-to-br from-[#0A2540]/10 to-[#1E40AF]/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <value.icon className="w-8 h-8 text-[#1E40AF]" />
+              <Card key={index} className="trust-shadow border-0 text-center hover:shadow-xl transition-shadow duration-300 p-4 sm:p-6">
+                <CardHeader className="pb-4">
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-[#0A2540]/10 to-[#1E40AF]/10 rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                    <value.icon className="w-7 h-7 sm:w-8 sm:h-8 text-[#1E40AF]" />
                   </div>
-                  <CardTitle className="font-[family-name:var(--font-space-grotesk)]">{value.title}</CardTitle>
+                  <CardTitle className="font-[family-name:var(--font-space-grotesk)] text-lg sm:text-xl">{value.title}</CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <CardDescription className="font-[family-name:var(--font-dm-sans)] text-professional-muted">
+                <CardContent className="px-2 sm:px-6">
+                  <CardDescription className="font-[family-name:var(--font-dm-sans)] text-professional-muted text-sm sm:text-base leading-relaxed">
                     {value.description}
                   </CardDescription>
                 </CardContent>
@@ -190,14 +190,14 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Company Timeline */}
-      <section className="py-20">
+      {/* Company Timeline - Mobile optimized */}
+      <section className="py-12 sm:py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 font-[family-name:var(--font-space-grotesk)] bg-gradient-to-r from-[#0A2540] to-[#1E40AF] bg-clip-text text-transparent">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 font-[family-name:var(--font-space-grotesk)] bg-gradient-to-r from-[#0A2540] to-[#1E40AF] bg-clip-text text-transparent">
               Our Journey
             </h2>
-            <p className="text-xl text-muted-foreground font-[family-name:var(--font-dm-sans)]">
+            <p className="text-base sm:text-lg lg:text-xl text-muted-foreground font-[family-name:var(--font-dm-sans)]">
               From AI innovation to business formation excellence
             </p>
           </div>
@@ -288,28 +288,28 @@ export default function AboutPage() {
               </p>
               <div className="space-y-4 mb-8">
                 <div className="flex items-start gap-3">
-                  <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0 mt-1" />
+                  <CheckCircle className="w-6 h-6 text-blue-400 flex-shrink-0 mt-1" />
                   <div>
                     <h3 className="font-semibold text-lg mb-1 text-white">AI Solutions & Machine Learning</h3>
                     <p className="text-blue-100">Custom AI models, natural language processing, and predictive analytics</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0 mt-1" />
+                  <CheckCircle className="w-6 h-6 text-blue-400 flex-shrink-0 mt-1" />
                   <div>
                     <h3 className="font-semibold text-lg mb-1 text-white">Full-Stack Web Development</h3>
                     <p className="text-blue-100">Enterprise-grade web applications, SaaS platforms, and custom software</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0 mt-1" />
+                  <CheckCircle className="w-6 h-6 text-blue-400 flex-shrink-0 mt-1" />
                   <div>
                     <h3 className="font-semibold text-lg mb-1 text-white">Cloud Architecture & DevOps</h3>
                     <p className="text-blue-100">Scalable cloud infrastructure, automation, and system optimization</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0 mt-1" />
+                  <CheckCircle className="w-6 h-6 text-blue-400 flex-shrink-0 mt-1" />
                   <div>
                     <h3 className="font-semibold text-lg mb-1 text-white">Business Automation Solutions</h3>
                     <p className="text-blue-100">Process automation, workflow optimization, and digital transformation</p>

@@ -228,54 +228,54 @@ export default function UnifiedChatbot() {
   if (!isMounted || !isVisible) return null
 
   return (
-    <div className="fixed bottom-6 right-6 z-[100]">
-      {/* Chat Window */}
+    <div className="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 z-[100]">
+      {/* Chat Window - Mobile responsive */}
       {isOpen && !isMinimized && (
-        <Card className="w-96 max-w-[calc(100vw-3rem)] h-[500px] flex flex-col shadow-2xl border-2 border-slate-200 bg-white rounded-2xl overflow-hidden">
-          {/* Chat Header */}
+        <Card className="w-[calc(100vw-2rem)] sm:w-96 max-w-sm sm:max-w-[calc(100vw-3rem)] h-[calc(100vh-8rem)] sm:h-[500px] flex flex-col shadow-2xl border-2 border-slate-200 bg-white rounded-2xl overflow-hidden">
+          {/* Chat Header - Mobile optimized */}
           <CardHeader className="pb-3 bg-gradient-to-r from-[#0A2540] via-[#1E40AF] to-[#1E3A8A] text-white rounded-t-xl border-b border-blue-700">
             <div className="flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <div className="relative">
-                  <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center shadow-lg border border-white/30 backdrop-blur-sm">
-                    <Bot className="w-5 h-5 text-white" />
+              <div className="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
+                <div className="relative flex-shrink-0">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 bg-white/20 rounded-xl flex items-center justify-center shadow-lg border border-white/30 backdrop-blur-sm">
+                    <Bot className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                   </div>
-                  <div className="absolute -top-0.5 -right-0.5 w-3 h-3 bg-gradient-to-r from-red-500 via-white to-blue-600 rounded-full border border-white shadow-sm"></div>
+                  <div className="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 sm:w-3 sm:h-3 bg-gradient-to-r from-red-500 via-white to-blue-600 rounded-full border border-white shadow-sm"></div>
                 </div>
-                <div>
-                  <CardTitle className="text-white text-lg font-heading font-bold">Mindscape Assistant</CardTitle>
-                  <p className="text-white/90 text-xs font-medium">LLC Formation Expert</p>
-                  <div className="flex items-center gap-2 mt-0.5">
-                    <div className={`w-2 h-2 rounded-full ${
-                      chatStatus === 'online' ? 'bg-green-400 shadow-[0_0_6px_rgba(34,197,94,0.8)]' : 
+                <div className="min-w-0 flex-1">
+                  <CardTitle className="text-white text-base sm:text-lg font-heading font-bold truncate">Mindscape Assistant</CardTitle>
+                  <p className="text-white/90 text-xs font-medium hidden sm:block">LLC Formation Expert</p>
+                  <div className="flex items-center gap-1 sm:gap-2 mt-0.5">
+                    <div className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full ${
+                      chatStatus === 'online' ? 'bg-blue-400 shadow-[0_0_6px_rgba(59,130,246,0.8)]' : 
                       chatStatus === 'away' ? 'bg-yellow-400 shadow-[0_0_6px_rgba(250,204,21,0.8)]' : 'bg-slate-400'
                     }`}></div>
                     <span className="text-white/90 text-xs font-medium">
-                      {chatStatus === 'online' ? 'Online now' : 
+                      {chatStatus === 'online' ? 'Online' : 
                        chatStatus === 'away' ? 'Away' : 'Offline'}
                     </span>
                   </div>
                 </div>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-1 sm:gap-2 flex-shrink-0">
                 <Button
                   variant="ghost"
                   size="sm"
                   onClick={() => setShowOptions(!showOptions)}
-                  className="text-white hover:bg-white/20 rounded-lg transition-all"
+                  className="text-white hover:bg-white/20 rounded-lg transition-all p-2 min-h-[32px] min-w-[32px]"
                   aria-label={showOptions ? 'Hide contact options' : 'Show contact options'}
                 >
-                  {showOptions ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+                  {showOptions ? <ChevronUp className="w-3.5 h-3.5 sm:w-4 sm:h-4" /> : <ChevronDown className="w-3.5 h-3.5 sm:w-4 sm:h-4" />}
                 </Button>
 
                 <Button
                   variant="ghost"
                   size="sm"
                   onClick={() => { setIsOpen(false); setIsMinimized(true); }}
-                  className="text-white hover:bg-white/20 rounded-lg transition-all"
+                  className="text-white hover:bg-white/20 rounded-lg transition-all p-2 min-h-[32px] min-w-[32px]"
                   aria-label="Minimize chat"
                 >
-                  <X className="w-4 h-4" />
+                  <X className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 </Button>
               </div>
             </div>

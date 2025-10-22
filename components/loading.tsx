@@ -35,7 +35,7 @@ export default function Loading({
   return (
     <div className="flex items-center justify-center p-8">
       <div className="flex flex-col items-center space-y-4">
-        <Loader2 className={`${sizeClasses[size]} animate-spin text-emerald-500`} />
+        <Loader2 className={`${sizeClasses[size]} animate-spin text-blue-500`} />
         <p className="text-muted-foreground text-sm">{text}</p>
       </div>
     </div>

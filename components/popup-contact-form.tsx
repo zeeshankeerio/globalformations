@@ -270,7 +270,7 @@ From: ll.mindscapeanalytics.com (Popup Form)
   if (isSubmitted) {
     return (
       <Dialog open={isOpen} onOpenChange={handleClose}>
-        <DialogContent className="sm:max-w-sm bg-white border-0 shadow-2xl rounded-2xl p-0 overflow-hidden relative !fixed !top-[50%] !left-[50%] !-translate-x-1/2 !-translate-y-1/2 !m-0" aria-describedby="success-description">
+        <DialogContent className="w-[95vw] max-w-sm sm:max-w-md bg-white border-0 shadow-2xl rounded-2xl p-0 overflow-hidden relative !fixed !top-[50%] !left-[50%] !-translate-x-1/2 !-translate-y-1/2 !m-0" aria-describedby="success-description">
           <DialogTitle className="sr-only">Contact Form Success</DialogTitle>
           <div id="success-description" className="sr-only">
             Your {selectedPackage || 'LLC formation'} inquiry has been sent successfully. We'll contact you within 2 hours.
@@ -364,7 +364,7 @@ From: ll.mindscapeanalytics.com (Popup Form)
   return (
     <Dialog open={isOpen} onOpenChange={handleClose}>
       <DialogContent 
-        className="sm:max-w-md bg-white border-0 shadow-2xl rounded-2xl p-0 overflow-hidden relative !fixed !top-[50%] !left-[50%] !-translate-x-1/2 !-translate-y-1/2 !m-0" 
+        className="w-[95vw] max-w-md sm:max-w-lg bg-white border-0 shadow-2xl rounded-2xl p-0 overflow-hidden relative !fixed !top-[50%] !left-[50%] !-translate-x-1/2 !-translate-y-1/2 !m-0 max-h-[90vh] overflow-y-auto" 
         aria-describedby="popup-form-description"
       >
         <DialogTitle className="sr-only">
@@ -384,28 +384,29 @@ From: ll.mindscapeanalytics.com (Popup Form)
         <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-600/10 to-blue-700/10 rounded-full blur-2xl"></div>
         <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-br from-slate-600/10 to-slate-700/10 rounded-full blur-xl"></div>
 
-        {/* Compact Header */}
-        <div className="bg-gradient-to-r from-[#0A2540] via-[#1E40AF] to-[#1E3A8A] px-4 py-3 relative overflow-hidden">
+        {/* Compact Header - Mobile optimized */}
+        <div className="bg-gradient-to-r from-[#0A2540] via-[#1E40AF] to-[#1E3A8A] px-3 sm:px-4 py-3 relative overflow-hidden">
           {/* Header Background Pattern */}
           <div className="absolute inset-0 bg-gradient-to-r from-white/5 via-transparent to-white/5"></div>
           <div className="absolute top-0 right-0 w-20 h-20 bg-white/10 rounded-full blur-xl"></div>
 
-          {/* Close Button */}
+          {/* Close Button - Better mobile touch target */}
           <Button
             onClick={handleClose}
             variant="ghost"
             size="sm"
-            className="absolute top-1 right-1 text-white/80 hover:text-white hover:bg-white/20 rounded-full w-7 h-7 p-0 backdrop-blur-sm transition-all duration-200 hover:scale-110"
+            className="absolute top-1 right-1 text-white/80 hover:text-white hover:bg-white/20 rounded-full w-8 h-8 sm:w-7 sm:h-7 p-0 backdrop-blur-sm transition-all duration-200 hover:scale-110"
             aria-label="Close contact form"
           >
-            <X className="w-3.5 h-3.5" />
+            <X className="w-4 h-4 sm:w-3.5 sm:h-3.5" />
           </Button>
 
-          {/* Service Type Badge */}
+          {/* Service Type Badge - Mobile responsive */}
           {currentServiceType === 'software' ? (
             <Badge className="mb-2 bg-white/20 backdrop-blur-sm text-white border border-white/30 text-xs px-2 py-0.5 rounded-full shadow-lg">
               <Rocket className="w-3 h-3 mr-1" />
-              Software Development & AI Solutions
+              <span className="hidden sm:inline">Software Development & AI Solutions</span>
+              <span className="sm:hidden">Software Services</span>
             </Badge>
           ) : selectedPackage && (
             <Badge className="mb-2 bg-white/20 backdrop-blur-sm text-white border border-white/30 text-xs px-2 py-0.5 rounded-full shadow-lg">
@@ -414,18 +415,18 @@ From: ll.mindscapeanalytics.com (Popup Form)
             </Badge>
           )}
 
-          {/* Compact Title */}
+          {/* Compact Title - Mobile responsive */}
           <div className="flex items-center gap-2 mb-1">
-            <div className="w-6 h-6 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center">
-              <Sparkles className="w-3 h-3 text-white" />
+            <div className="w-5 h-5 sm:w-6 sm:h-6 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center">
+              <Sparkles className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-white" />
             </div>
-            <h2 className="text-lg font-bold text-white">
+            <h2 className="text-base sm:text-lg font-bold text-white">
               {currentServiceType === 'software' ? 'Get in Touch' : 'Get Started Today'}
             </h2>
           </div>
 
-          {/* Compact Subtitle */}
-          <div className="flex items-center gap-3 text-blue-100 text-xs">
+          {/* Compact Subtitle - Mobile responsive */}
+          <div className="flex items-center gap-2 sm:gap-3 text-blue-100 text-xs">
             <div className="flex items-center gap-1">
               <Zap className="w-2.5 h-2.5" />
               <span>Quick</span>
@@ -441,8 +442,8 @@ From: ll.mindscapeanalytics.com (Popup Form)
           </div>
         </div>
 
-        {/* Compact Form */}
-        <form onSubmit={handleSubmit} className="relative z-10 p-4 space-y-3" noValidate>
+        {/* Compact Form - Mobile optimized */}
+        <form onSubmit={handleSubmit} className="relative z-10 p-3 sm:p-4 space-y-3 form-mobile-spacing" noValidate>
           {submitError && (
             <div className="bg-gradient-to-r from-red-50 to-pink-50 border border-red-200 text-red-700 px-3 py-2 rounded-lg flex items-center gap-2 text-sm shadow-sm" role="alert">
               <AlertCircle className="w-4 h-4 flex-shrink-0" />

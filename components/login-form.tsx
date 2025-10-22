@@ -17,7 +17,7 @@ function SubmitButton() {
     <Button
       type="submit"
       disabled={pending}
-      className="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-6 text-lg font-medium rounded-lg h-[60px] shadow-lg"
+      className="w-full bg-blue-600 hover:bg-blue-700 text-white py-6 text-lg font-medium rounded-lg h-[60px] shadow-lg"
     >
       {pending ? (
         <>
@@ -88,7 +88,7 @@ export default function LoginForm() {
 
         <div className="text-center text-gray-300">
           Don't have an account?{" "}
-          <Link href="/auth/sign-up" className="text-emerald-400 hover:text-emerald-300 hover:underline">
+          <Link href="/auth/sign-up" className="text-blue-400 hover:text-blue-300 hover:underline">
             Sign up
           </Link>
         </div>

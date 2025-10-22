@@ -97,6 +97,60 @@
   .dark textarea::placeholder {
     color: rgb(148 163 184) !important; /* slate-400 */
   }
+
+  /* Mobile-specific improvements */
+  @media (max-width: 768px) {
+    /* Safe area padding for devices with notches */
+    .safe-area-padding {
+      padding-top: env(safe-area-inset-top);
+      padding-bottom: env(safe-area-inset-bottom);
+      padding-left: env(safe-area-inset-left);
+      padding-right: env(safe-area-inset-right);
+    }
+
+    /* Better touch targets on mobile */
+    button, 
+    [role="button"],
+    input[type="submit"],
+    input[type="button"] {
+      min-height: 44px;
+      min-width: 44px;
+    }
+
+    /* Prevent zoom on form inputs */
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="password"],
+    textarea,
+    select {
+      font-size: 16px !important;
+    }
+
+    /* Better form spacing on mobile */
+    .form-mobile-spacing {
+      gap: 1rem;
+    }
+
+    /* Responsive text sizing */
+    .mobile-hero-text {
+      font-size: clamp(2rem, 8vw, 4rem);
+      line-height: 1.1;
+    }
+
+    .mobile-subtext {
+      font-size: clamp(1rem, 4vw, 1.25rem);
+      line-height: 1.5;
+    }
+  }
+
+  /* Enhanced mobile navigation styles */
+  @media (max-width: 1024px) {
+    .mobile-nav-overlay {
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+    }
+  }
   
   /* Accessibility: visible focusable skip link for keyboard users */
   .skip-link {

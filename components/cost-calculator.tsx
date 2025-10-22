@@ -250,7 +250,7 @@ export default function CostCalculator({ onGetStarted }: CostCalculatorProps = {
                     </div>
                     <div className="mt-3 pt-3 border-t border-slate-200/50">
                       <div className="flex items-center gap-1.5">
-                        <CheckCircle className="w-3.5 h-3.5 text-emerald-600" />
+                        <CheckCircle className="w-3.5 h-3.5 text-blue-600" />
                         <span className="text-xs text-slate-600">
                           Business-friendly rating: {selectedState.businessFriendly}/5
                         </span>

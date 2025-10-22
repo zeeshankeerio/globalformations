@@ -111,52 +111,52 @@ export default function PricingPage() {
 
 
 
-      {/* Hero Section */}
-      <section className="py-20 bg-muted/30">
+      {/* Hero Section - Mobile optimized */}
+      <section className="py-12 sm:py-16 lg:py-20 bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <Badge className="mb-6 bg-accent text-white">Transparent Pricing</Badge>
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 font-[family-name:var(--font-space-grotesk)]">
+          <Badge className="mb-4 sm:mb-6 bg-accent text-white text-sm px-4 py-2">Transparent Pricing</Badge>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 font-[family-name:var(--font-space-grotesk)] leading-tight">
             Choose Your LLC Formation Package
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-[family-name:var(--font-dm-sans)]">
+          <p className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto font-[family-name:var(--font-dm-sans)] leading-relaxed px-4">
             Simple, transparent pricing with no hidden fees. Choose the package that best fits your business needs and
             budget.
           </p>
         </div>
       </section>
 
-      {/* Pricing Cards */}
-      <section className="py-20">
+      {/* Pricing Cards - Mobile responsive grid */}
+      <section className="py-12 sm:py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {packages.map((pkg) => (
               <Card
                 key={pkg.name}
-                className={`trust-shadow border-0 relative ${pkg.popular ? "ring-2 ring-accent scale-105" : ""}`}
+                className={`trust-shadow border-0 relative transition-all duration-300 hover:shadow-xl ${pkg.popular ? "ring-2 ring-accent md:scale-105" : ""} ${pkg.popular ? "order-first md:order-none" : ""}`}
               >
                 {pkg.popular && (
-                  <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-accent">Most Popular</Badge>
+                  <Badge className="absolute -top-2 sm:-top-3 left-1/2 transform -translate-x-1/2 bg-accent text-xs sm:text-sm px-3 py-1">Most Popular</Badge>
                 )}
-                <CardHeader className="text-center pb-8">
-                  <CardTitle className="text-2xl font-[family-name:var(--font-space-grotesk)]">{pkg.name}</CardTitle>
-                  <div className="text-4xl font-bold text-primary mt-4">
+                <CardHeader className="text-center pb-6 sm:pb-8 pt-6 sm:pt-8">
+                  <CardTitle className="text-xl sm:text-2xl font-[family-name:var(--font-space-grotesk)]">{pkg.name}</CardTitle>
+                  <div className="text-3xl sm:text-4xl font-bold text-primary mt-3 sm:mt-4">
                     {pkg.price}
-                    <span className="text-lg text-muted-foreground font-normal ml-1">{pkg.subtitle}</span>
+                    <span className="text-sm sm:text-lg text-muted-foreground font-normal ml-1">{pkg.subtitle}</span>
                   </div>
-                  <CardDescription className="mt-4 font-[family-name:var(--font-dm-sans)] text-professional-muted">
+                  <CardDescription className="mt-3 sm:mt-4 font-[family-name:var(--font-dm-sans)] text-professional-muted text-sm sm:text-base px-2 sm:px-0">
                     {pkg.description}
                   </CardDescription>
                 </CardHeader>
-                <CardContent className="space-y-4">
+                <CardContent className="space-y-3 sm:space-y-4 px-4 sm:px-6">
                   {pkg.features.map((feature, featureIndex) => (
                     <div key={featureIndex} className="flex items-center gap-3">
                       {feature.included ? (
-                        <CheckCircle className="w-5 h-5 text-accent flex-shrink-0" />
+                        <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-accent flex-shrink-0" />
                       ) : (
-                        <X className="w-5 h-5 text-muted-foreground flex-shrink-0" />
+                        <X className="w-4 h-4 sm:w-5 sm:h-5 text-muted-foreground flex-shrink-0" />
                       )}
                       <span
-                        className={`font-[family-name:var(--font-dm-sans)] ${feature.included ? "text-foreground" : "text-muted-foreground"
+                        className={`font-[family-name:var(--font-dm-sans)] text-sm sm:text-base ${feature.included ? "text-foreground" : "text-muted-foreground"
                           }`}
                       >
                         {feature.name}
@@ -165,11 +165,11 @@ export default function PricingPage() {
                   ))}
                   <Button 
                     onClick={() => handleGetStarted(pkg.name, pkg.price)}
-                    className={`w-full mt-8 ${pkg.popular ? "bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 shadow-lg hover:shadow-blue-500/25" : "bg-gradient-to-r from-slate-600 to-blue-600 hover:from-slate-700 hover:to-blue-700 shadow-lg hover:shadow-blue-400/25"} text-white transition-all duration-300 group relative overflow-hidden`} 
+                    className={`w-full mt-6 sm:mt-8 min-h-[44px] ${pkg.popular ? "bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 shadow-lg hover:shadow-blue-500/25" : "bg-gradient-to-r from-slate-600 to-blue-600 hover:from-slate-700 hover:to-blue-700 shadow-lg hover:shadow-blue-400/25"} text-white transition-all duration-300 group relative overflow-hidden`} 
                     size="lg"
                   >
                     <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
-                    <span className="relative z-10">Get Started</span>
+                    <span className="relative z-10 text-sm sm:text-base">Get Started</span>
                     <ArrowRight className="w-4 h-4 ml-2 relative z-10 group-hover:translate-x-1 transition-transform duration-200" />
                   </Button>
                 </CardContent>
