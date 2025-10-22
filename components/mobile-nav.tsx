@@ -47,33 +47,31 @@ export default function MobileNav({ className }: MobileNavProps) {
 
       {/* Mobile menu overlay */}
       {isOpen && (
-        <div className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm" onClick={toggleMenu} />
+        <div 
+          className="fixed inset-0 z-30 bg-black/50 backdrop-blur-sm" 
+          onClick={toggleMenu}
+          aria-hidden="true"
+        />
       )}
 
       {/* Mobile menu */}
       <div
         className={cn(
-          "fixed top-0 right-0 z-40 h-full w-full max-w-sm bg-white/96 backdrop-blur-lg border-l border-slate-200/60 shadow-2xl transform transition-transform duration-300 ease-in-out safe-area-padding",
+          "fixed top-0 right-0 z-40 h-full w-full max-w-sm bg-white border-l border-slate-200 shadow-2xl transform transition-transform duration-300 ease-in-out safe-area-padding",
           isOpen ? "translate-x-0" : "translate-x-full"
         )}
+        role="dialog"
+        aria-modal="true"
+        aria-label="Mobile navigation menu"
       >
         <div className="flex flex-col h-full">
           {/* Header - Better mobile spacing */}
-          <div className="flex items-center justify-between p-4 sm:p-6 border-b border-slate-200/60 bg-white/80 backdrop-blur-sm">
+          <div className="flex items-center justify-between p-4 sm:p-6 border-b border-slate-200 bg-white">
             <ProfessionalLogo size="sm" variant="light" href="/" />
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={toggleMenu}
-              className="h-12 w-12 p-3 hover:bg-slate-100 active:bg-slate-200 transition-all duration-200"
-              aria-label="Close mobile menu"
-            >
-              <X className="h-5 w-5 text-slate-700" />
-            </Button>
           </div>
 
           {/* Navigation items - Improved mobile layout */}
-          <nav className="flex-1 px-4 sm:px-6 py-6 overflow-y-auto">
+          <nav className="flex-1 px-4 sm:px-6 py-6 overflow-y-auto bg-white">
             <ul className="space-y-4">
               {/* Services Dropdown - Enhanced mobile */}
               <li>
@@ -144,7 +142,7 @@ export default function MobileNav({ className }: MobileNavProps) {
             </ul>
 
             {/* CTA Section - Better mobile spacing */}
-            <div className="mt-8 pt-6 border-t border-slate-200/60">
+            <div className="mt-8 pt-6 border-t border-slate-200">
               <ContactButton
                 variant="whatsapp"
                 message="consultation"
@@ -158,7 +156,7 @@ export default function MobileNav({ className }: MobileNavProps) {
           </nav>
 
           {/* Footer - Better mobile */}
-          <div className="p-4 sm:p-6 border-t border-slate-200/60 bg-slate-50/80">
+          <div className="p-4 sm:p-6 border-t border-slate-200 bg-slate-50">
             <p className="text-sm text-slate-600 text-center font-medium">
               Start your LLC in 1 day
             </p>
