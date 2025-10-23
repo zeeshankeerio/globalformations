@@ -180,18 +180,18 @@ export default function HomePage() {
                 {/* Pricing & Benefits - Mobile stacked layout */}
                 <div className="flex flex-col gap-4">
                   {/* Compact Price Card - Mobile optimized */}
-                  <div className="bg-gradient-to-br from-white via-blue-50/20 to-white backdrop-blur-md border-2 border-blue-200/60 rounded-2xl p-4 sm:p-5 shadow-xl relative overflow-hidden group hover:shadow-blue-500/25 transition-all duration-300 max-w-xs mx-auto lg:mx-0">
+                  <div className="bg-gradient-to-br from-white via-blue-50/20 to-white backdrop-blur-md border-2 border-blue-200/60 rounded-2xl p-6 shadow-xl relative overflow-hidden group hover:shadow-blue-500/25 transition-all duration-300 w-60 h-52 mx-auto lg:mx-0 flex flex-col justify-center">
                     <div className="absolute top-0 right-0 bg-gradient-to-r from-red-500 to-red-600 text-white text-xs px-2 py-0.5 rounded-bl-xl font-bold">
                       LIMITED
                     </div>
                     <div className="text-center">
-                      <div className="text-3xl sm:text-4xl font-black text-black mb-1">$50</div>
-                      <div className="text-slate-600 text-sm font-semibold mb-2">+ State Fee</div>
-                      <div className="inline-flex items-center gap-1 text-blue-700 text-xs font-bold bg-blue-50 px-2 py-1 rounded-full border border-blue-200">
+                      <div className="text-4xl font-black text-black mb-1">$50</div>
+                      <div className="text-slate-600 text-sm font-semibold mb-3">+ State Fee</div>
+                      <div className="inline-flex items-center gap-1 text-blue-700 text-xs font-bold bg-blue-50 px-2 py-1 rounded-full border border-blue-200 mb-3">
                         <CheckCircle className="w-3 h-3" />
                         No Hidden Fees
                       </div>
-                      <div className="text-xs text-slate-500 mt-2">
+                      <div className="text-xs text-slate-500">
                         <span className="line-through">$199</span>
                         <span className="text-red-600 font-bold ml-1">Save $149</span>
                       </div>

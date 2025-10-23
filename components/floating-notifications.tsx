@@ -4,11 +4,16 @@ import { useState, useEffect } from "react"
 import { CheckCircle, X } from "lucide-react"
 
 const notifications = [
-  { name: "Sarah M.", location: "Delaware", action: "formed LLC", time: "2 minutes ago" },
-  { name: "Mike R.", location: "Wyoming", action: "opened bank account", time: "5 minutes ago" },
-  { name: "Lisa K.", location: "Nevada", action: "got EIN approved", time: "8 minutes ago" },
-  { name: "David L.", location: "Florida", action: "started PayPal setup", time: "12 minutes ago" },
-  { name: "Emma S.", location: "Texas", action: "completed formation", time: "15 minutes ago" },
+  { name: "Jennifer K.", location: "California", action: "completed LLC formation", time: "2 minutes ago" },
+  { name: "Marcus T.", location: "Texas", action: "opened business bank account", time: "7 minutes ago" },
+  { name: "Priya S.", location: "New York", action: "received EIN number", time: "11 minutes ago" },
+  { name: "Carlos M.", location: "Florida", action: "set up Stripe payments", time: "16 minutes ago" },
+  { name: "Rachel B.", location: "Wyoming", action: "got operating agreement", time: "23 minutes ago" },
+  { name: "Ahmed H.", location: "Delaware", action: "started Amazon seller setup", time: "28 minutes ago" },
+  { name: "Sophie L.", location: "Nevada", action: "activated PayPal business", time: "35 minutes ago" },
+  { name: "Jason W.", location: "Colorado", action: "completed tax registration", time: "42 minutes ago" },
+  { name: "Maria G.", location: "Arizona", action: "filed for registered agent", time: "48 minutes ago" },
+  { name: "Kevin P.", location: "Washington", action: "launched online store", time: "54 minutes ago" },
 ]
 
 export default function FloatingNotifications() {
@@ -29,17 +34,20 @@ export default function FloatingNotifications() {
       setTimeout(() => setIsVisible(false), 5000)
     }
 
-    const interval = setInterval(() => {
+    const showNextNotification = () => {
       setCurrentNotification((prev) => (prev + 1) % notifications.length)
       showNotification()
-    }, 10000)
+    }
 
-    // Show first notification after 4 seconds
-    const initialTimeout = setTimeout(showNotification, 4000)
+    // Show first notification after 60 seconds (1 minute)
+    const initialTimeout = setTimeout(showNotification, 60000)
+    
+    // Then show subsequent notifications every 60 seconds
+    const interval = setInterval(showNextNotification, 60000)
 
     return () => {
-      clearInterval(interval)
       clearTimeout(initialTimeout)
+      clearInterval(interval)
     }
   }, [isDismissed, isMounted])
 

@@ -1,11 +1,12 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import ContactButton from "@/components/contact-button"
 import ProfessionalLogo from "@/components/professional-logo"
-import { Menu, X, ChevronDown, Building2, Code2, ArrowRight } from "lucide-react"
+import { Menu, X, ChevronDown, Building2, Code2 } from "lucide-react"
 import { cn } from "@/lib/utils"
+import Link from "next/link"
 
 interface MobileNavProps {
   className?: string
@@ -15,8 +16,26 @@ export default function MobileNav({ className }: MobileNavProps) {
   const [isOpen, setIsOpen] = useState(false)
   const [isServicesOpen, setIsServicesOpen] = useState(false)
 
-  const toggleMenu = () => setIsOpen(!isOpen)
+  const toggleMenu = () => {
+    setIsOpen(!isOpen)
+    setIsServicesOpen(false) // Reset services dropdown when closing
+  }
+  
   const toggleServices = () => setIsServicesOpen(!isServicesOpen)
+
+  // Prevent body scroll when menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+    
+    // Cleanup on unmount
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
+  }, [isOpen])
 
   const navItems = [
     { href: "/pricing", label: "Pricing" },
@@ -27,157 +46,165 @@ export default function MobileNav({ className }: MobileNavProps) {
     { href: "/contact", label: "Contact" },
   ]
 
+  const handleNavClick = () => {
+    setIsOpen(false)
+    setIsServicesOpen(false)
+  }
+
   return (
     <div className={cn("md:hidden", className)}>
-      {/* Mobile menu button - Enhanced touch target */}
+      {/* Mobile menu toggle button */}
       <Button
         variant="ghost"
         size="icon"
         onClick={toggleMenu}
-        className="relative z-50 h-12 w-12 p-3 hover:bg-slate-100 active:bg-slate-200 transition-all duration-200"
-        aria-label="Toggle mobile menu"
+        className="relative z-50 h-11 w-11 p-2.5 hover:bg-slate-100 active:bg-slate-200 transition-all duration-200 rounded-lg"
+        aria-label={isOpen ? "Close mobile menu" : "Open mobile menu"}
         aria-expanded={isOpen}
       >
         {isOpen ? (
-          <X className="h-6 w-6 text-slate-700" />
+          <X className="h-5 w-5 text-slate-700" />
         ) : (
-          <Menu className="h-6 w-6 text-slate-700" />
+          <Menu className="h-5 w-5 text-slate-700" />
         )}
       </Button>
 
       {/* Mobile menu overlay */}
       {isOpen && (
         <div 
-          className="fixed inset-0 z-30 bg-black/50 backdrop-blur-sm" 
+          className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm" 
           onClick={toggleMenu}
           aria-hidden="true"
         />
       )}
 
-      {/* Mobile menu */}
+      {/* Mobile menu panel */}
       <div
         className={cn(
-          "fixed inset-y-0 right-0 z-40 w-full max-w-sm bg-white shadow-2xl transform transition-transform duration-300 ease-in-out",
+          "fixed inset-0 z-50 transform transition-transform duration-300 ease-in-out md:hidden",
           isOpen ? "translate-x-0" : "translate-x-full"
         )}
-        style={{ height: '100dvh' }}
         role="dialog"
         aria-modal="true"
         aria-label="Mobile navigation menu"
+        style={{ height: '100vh', minHeight: '100dvh' }}
       >
-        <div className="flex flex-col h-full min-h-screen">
-          {/* Header - Full width and attractive */}
-          <div className="flex items-center justify-between p-6 border-b border-slate-100 bg-gradient-to-r from-blue-50 to-indigo-50">
-            <ProfessionalLogo size="sm" variant="light" href="/" />
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={toggleMenu}
-              className="h-10 w-10 p-2 hover:bg-white/80 active:bg-white transition-all duration-200 rounded-full"
-              aria-label="Close mobile menu"
-            >
-              <X className="h-5 w-5 text-slate-700" />
-            </Button>
-          </div>
-
-          {/* Navigation items - Full height and attractive */}
-          <nav className="flex-1 px-6 py-8 overflow-y-auto bg-white">
-            <ul className="space-y-6">
-              {/* Services Dropdown - Enhanced mobile */}
-              <li>
-                <button
-                  onClick={toggleServices}
-                  className="flex items-center justify-between w-full text-xl font-bold text-slate-800 hover:text-blue-600 transition-colors py-4 px-4 rounded-xl hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 active:bg-blue-100"
-                >
-                  <span className="flex items-center gap-3">
-                    Services
-                  </span>
-                  <ChevronDown className={cn("w-6 h-6 transition-transform duration-300", isServicesOpen && "rotate-180")} />
-                </button>
-                {isServicesOpen && (
-                  <ul className="mt-4 space-y-4 animate-in slide-in-from-top-2 duration-300">
-                    <li>
-                      <a
-                        href="/services"
-                        onClick={toggleMenu}
-                        className="flex items-start gap-4 p-5 rounded-2xl bg-gradient-to-r from-blue-50 to-indigo-50 hover:from-blue-100 hover:to-indigo-100 transition-all duration-200 group border border-blue-100/50 shadow-sm"
-                      >
-                        <div className="mt-1 p-3 rounded-xl bg-blue-500 group-hover:bg-blue-600 transition-colors duration-200 shadow-md">
-                          <Building2 className="w-6 h-6 text-white" />
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <div className="flex items-center gap-2 font-bold text-slate-900 mb-2 text-lg">
-                            Business Formation
-                            <ArrowRight className="w-5 h-5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200" />
-                          </div>
-                          <span className="text-sm text-slate-600 leading-relaxed">LLC & Business Setup Services</span>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://mindscapeanalytics.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={toggleMenu}
-                        className="flex items-start gap-4 p-5 rounded-2xl bg-gradient-to-r from-purple-50 to-blue-50 hover:from-purple-100 hover:to-blue-100 transition-all duration-200 group border border-purple-100/50 shadow-sm"
-                      >
-                        <div className="mt-1 p-3 rounded-xl bg-purple-500 group-hover:bg-purple-600 transition-colors duration-200 shadow-md">
-                          <Code2 className="w-6 h-6 text-white" />
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <div className="flex items-center gap-2 font-bold text-slate-900 mb-2 text-lg">
-                            Software Services
-                            <ArrowRight className="w-5 h-5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200" />
-                          </div>
-                          <span className="text-sm text-slate-600 leading-relaxed">AI & Web Development Solutions</span>
-                        </div>
-                      </a>
-                    </li>
-                  </ul>
-                )}
-              </li>
-
-              {navItems.map((item) => (
-                <li key={item.href}>
-                  <a
-                    href={item.href}
-                    onClick={toggleMenu}
-                    className="block text-xl font-semibold text-slate-700 hover:text-blue-600 transition-colors py-4 px-4 rounded-xl hover:bg-gradient-to-r hover:from-slate-50 hover:to-blue-50 active:bg-slate-100"
-                  >
-                    {item.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-
-            {/* CTA Section - Enhanced design */}
-            <div className="mt-10 pt-8 border-t border-slate-100">
-              <ContactButton
-                variant="whatsapp"
-                message="consultation"
-                context="mobile-nav"
-                className="w-full justify-center bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white shadow-xl hover:shadow-blue-500/30 py-5 px-8 text-lg font-bold rounded-2xl transition-all duration-200 transform hover:scale-105"
-                size="lg"
+        {/* Menu content container - Full width on mobile */}
+        <div className="h-full w-full bg-white shadow-2xl">
+          <div className="flex h-full flex-col">
+            
+            {/* Header */}
+            <div className="flex items-center justify-between px-6 py-6 border-b border-slate-200 bg-white shrink-0">
+              <ProfessionalLogo size="md" variant="light" href="/" />
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={toggleMenu}
+                className="h-12 w-12 p-3 hover:bg-slate-100 rounded-lg transition-colors"
+                aria-label="Close menu"
               >
-                Free Consultation
-              </ContactButton>
-              <p className="text-center text-sm text-slate-500 mt-4 font-medium">
-                Get expert guidance for your business
-              </p>
+                <X className="h-6 w-6 text-slate-600" />
+              </Button>
             </div>
-          </nav>
 
-          {/* Footer - Attractive design */}
-          <div className="p-6 border-t border-slate-100 bg-gradient-to-r from-slate-50 to-blue-50">
-            <div className="text-center">
-              <p className="text-lg font-bold text-slate-800 mb-1">
-                Start your LLC in 1 day
-              </p>
-              <p className="text-sm text-slate-600">
-                Professional • Fast • Reliable
-              </p>
+            {/* Scrollable navigation content */}
+            <div className="flex-1 overflow-y-auto px-6 py-4">
+              <nav>
+                <ul className="space-y-0.5">
+                  
+                  {/* Services dropdown */}
+                  <li>
+                    <button
+                      onClick={toggleServices}
+                      className="flex w-full items-center justify-between rounded-lg px-3 py-2.5 text-left text-sm font-semibold text-slate-800 hover:bg-slate-100 hover:text-blue-600 transition-colors"
+                    >
+                      <span>Services</span>
+                      <ChevronDown 
+                        className={cn(
+                          "h-4 w-4 transition-transform duration-200",
+                          isServicesOpen && "rotate-180"
+                        )} 
+                      />
+                    </button>
+                    
+                    {/* Services submenu */}
+                    {isServicesOpen && (
+                      <div className="mt-1 space-y-1 pl-3">
+                        <Link
+                          href="/services"
+                          onClick={handleNavClick}
+                          className="flex items-center gap-3 rounded-lg bg-blue-50 p-3 hover:bg-blue-100 transition-colors border border-blue-100"
+                        >
+                          <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-blue-500">
+                            <Building2 className="h-3.5 w-3.5 text-white" />
+                          </div>
+                          <div className="flex-1">
+                            <div className="font-semibold text-slate-900 text-xs">Business Formation</div>
+                            <div className="text-xs text-slate-600">LLC & Business Setup</div>
+                          </div>
+                        </Link>
+                        
+                        <Link
+                          href="https://mindscapeanalytics.com"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={handleNavClick}
+                          className="flex items-center gap-3 rounded-lg bg-purple-50 p-3 hover:bg-purple-100 transition-colors border border-purple-100"
+                        >
+                          <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-purple-500">
+                            <Code2 className="h-3.5 w-3.5 text-white" />
+                          </div>
+                          <div className="flex-1">
+                            <div className="font-semibold text-slate-900 text-xs">Software Services</div>
+                            <div className="text-xs text-slate-600">AI & Web Development</div>
+                          </div>
+                        </Link>
+                      </div>
+                    )}
+                  </li>
+
+                  {/* Regular navigation items */}
+                  {navItems.map((item) => (
+                    <li key={item.href}>
+                      <Link
+                        href={item.href}
+                        onClick={handleNavClick}
+                        className="block rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-blue-600 transition-colors"
+                      >
+                        {item.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* CTA Section */}
+                <div className="mt-6 space-y-4">
+                  <div className="rounded-lg bg-gradient-to-r from-blue-50 to-indigo-50 p-4">
+                    <ContactButton
+                      variant="whatsapp"
+                      message="consultation"
+                      context="mobile-nav"
+                      className="w-full justify-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors shadow-sm text-sm"
+                      size="lg"
+                    >
+                      Free Consultation
+                    </ContactButton>
+                    <p className="mt-2 text-center text-xs text-slate-600">
+                      Get expert guidance for your business
+                    </p>
+                  </div>
+                </div>
+              </nav>
             </div>
+
+            {/* Footer */}
+            <div className="border-t border-slate-200 bg-gradient-to-r from-slate-50 to-blue-50 px-6 py-6 shrink-0">
+              <div className="text-center">
+                <p className="text-base font-bold text-slate-800">Start your LLC in 1 day</p>
+                <p className="text-sm text-slate-600 mt-1">Professional • Fast • Reliable</p>
+              </div>
+            </div>
+            
           </div>
         </div>
       </div>
