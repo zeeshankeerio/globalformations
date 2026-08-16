@@ -36,7 +36,7 @@ export default function ServicesPage() {
         "Corporate seal and binder",
       ],
       timeline: "1-2 business days",
-      price: "Starting at $50 + state fee",
+      price: "Starting at $180 + state fee",
     },
     {
       icon: FileText,

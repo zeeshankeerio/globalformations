@@ -5,7 +5,7 @@
  * All Rights Reserved - Proprietary and Confidential
  * 
  * Unauthorized copying, modification, or distribution is strictly prohibited.
- * Contact: zeeshan.keerio@mindscapeanalytics.com
+ * Contact: info@mindscapeanalytics.com
  */
 
 import type React from "react"
@@ -28,9 +28,9 @@ const dmSans = DM_Sans({
 })
 
 export const metadata: Metadata = {
-  title: "Mindscape Global Formations — Form a U.S. LLC Fast | $50 + State Fee",
+  title: "Mindscape Global Formations — Form a U.S. LLC Fast | $180 + State Fee",
   description:
-    "Professional, USA‑based LLC formation. Expert filing, EIN, U.S. banking, and payment processing. Transparent pricing: $50 + state fee.",
+    "Professional, USA‑based LLC formation. Expert filing, EIN, U.S. banking, and payment processing. Transparent pricing: $180 + state fee.",
   generator: "Next.js",
   keywords:
     "LLC Formation, Start U.S. Business, Open PayPal Account, Amazon Seller LLC, Business Formation, EIN, Registered Agent, Mindscape Analytics",
@@ -108,7 +108,7 @@ export default function RootLayout({
               console.log('%cCopyright © 2025 Zeeshan Keerio / Mindscape Analytics', 'color: #1E40AF; font-size: 14px; font-weight: bold;');
               console.log('%c🚫 UNAUTHORIZED ACCESS PROHIBITED', 'color: red; font-size: 14px; font-weight: bold;');
               console.log('%cThis is proprietary software. Unauthorized copying, modification, or distribution is strictly prohibited and may result in legal action.', 'color: #666; font-size: 12px;');
-              console.log('%cContact: zeeshan.keerio@mindscapeanalytics.com', 'color: #1E40AF; font-size: 12px;');
+              console.log('%cContact: info@mindscapeanalytics.com', 'color: #1E40AF; font-size: 12px;');
             `,
           }}
         />
@@ -130,7 +130,7 @@ export default function RootLayout({
           Unauthorized copying, modification, or distribution
           is strictly prohibited and may result in legal action.
           
-          Contact: zeeshan.keerio@mindscapeanalytics.com
+          Contact: info@mindscapeanalytics.com
           Phone: +1-307-210-6155
           ==========================================
         */}

@@ -127,7 +127,7 @@ export default function UnifiedChatbot() {
     const lowerMessage = message.toLowerCase()
     
     if (lowerMessage.includes('cost') || lowerMessage.includes('price') || lowerMessage.includes('fee')) {
-      return "Our LLC formation packages start at just $50 + state fees! 🎯\n\n📦 Starter ($50): Basic filing\n📦 Standard ($199): Filing + EIN + Banking Resolution\n📦 Premium ($399): Everything + Operating Agreement + Compliance Kit\n\nState fees vary by location ($50-$500). Which package interests you?"
+      return "Our LLC formation packages start at $180 + state fees! 🎯\n\n📦 Starter ($180): Basic filing\n📦 Standard ($320): Filing + EIN + Banking Resolution\n📦 Premium ($530): Everything + Operating Agreement + Compliance Kit\n\nState fees vary by location ($50-$500). Which package interests you?"
     }
     
     if (lowerMessage.includes('state') || lowerMessage.includes('which state') || lowerMessage.includes('wyoming') || lowerMessage.includes('delaware')) {

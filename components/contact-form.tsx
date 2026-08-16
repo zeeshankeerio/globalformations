@@ -37,7 +37,7 @@ export default function ContactForm() {
       // Validate form data
       const validatedData = legacyContactFormSchema.parse(data)
       
-      // Send email to zeeshan.keerio@mindscapeanalytics.com
+      // Send email to the company inbox
       await sendContactEmail(validatedData)
       
       // Also send WhatsApp message if phone is provided
@@ -144,7 +144,7 @@ ${data.message}
 🏢 Mindscape Global Formations
         `
 
-        const mailtoLink = `mailto:zeeshan.keerio@mindscapeanalytics.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`
+        const mailtoLink = `mailto:info@mindscapeanalytics.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`
         window.open(mailtoLink, '_blank')
         
         return { success: true, service: 'Mailto Fallback' }
@@ -358,19 +358,19 @@ From: ll.mindscapeanalytics.com
               <SelectItem value="starter" className="text-slate-900 hover:bg-slate-50">
                 <div className="flex items-center justify-between w-full">
                   <span>Starter Package</span>
-                  <Badge className="ml-2 bg-green-100 text-green-700">$50</Badge>
+                  <Badge className="ml-2 bg-green-100 text-green-700">$180</Badge>
                 </div>
               </SelectItem>
               <SelectItem value="standard" className="text-slate-900 hover:bg-slate-50">
                 <div className="flex items-center justify-between w-full">
                   <span>Standard Package</span>
-                  <Badge className="ml-2 bg-blue-100 text-blue-700">$150</Badge>
+                  <Badge className="ml-2 bg-blue-100 text-blue-700">$320</Badge>
                 </div>
               </SelectItem>
               <SelectItem value="premium" className="text-slate-900 hover:bg-slate-50">
                 <div className="flex items-center justify-between w-full">
                   <span>Premium Package</span>
-                  <Badge className="ml-2 bg-purple-100 text-purple-700">$250</Badge>
+                  <Badge className="ml-2 bg-purple-100 text-purple-700">$530</Badge>
                 </div>
               </SelectItem>
               <SelectItem value="amazon" className="text-slate-900 hover:bg-slate-50">
@@ -492,7 +492,7 @@ From: ll.mindscapeanalytics.com
             WhatsApp Chat
           </Button>
           <Button
-            onClick={() => window.location.href = 'mailto:zeeshan.keerio@mindscapeanalytics.com?subject=LLC Formation Inquiry'}
+            onClick={() => window.location.href = 'mailto:info@mindscapeanalytics.com?subject=LLC Formation Inquiry'}
             variant="outline"
             className="border-slate-300 text-slate-700 hover:bg-slate-50 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200"
           >

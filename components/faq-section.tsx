@@ -34,7 +34,7 @@ export default function FAQSection() {
     {
       id: "1",
       question: "How much does LLC formation cost?",
-      answer: "Our LLC formation starts at $50 + state filing fees. State fees range from $50-$500 depending on the state. We offer transparent pricing with no hidden fees.",
+      answer: "Our LLC formation starts at $180 + state filing fees. State fees range from $50-$500 depending on the state. We offer transparent pricing with no hidden fees.",
       category: "pricing",
       popular: true
     },

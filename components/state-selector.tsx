@@ -220,11 +220,11 @@ export default function StateSelector({ onGetStarted }: StateSelectorProps = {})
 
                 <div className="space-y-3">
                   <Button 
-                    onClick={() => onGetStarted?.(selectedState.name, selectedState.filingFee + 50)}
+                    onClick={() => onGetStarted?.(selectedState.name, selectedState.filingFee + 180)}
                     className="w-full bg-blue-600 hover:bg-blue-700 text-white group relative overflow-hidden"
                   >
                     <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
-                    <span className="relative z-10">Form LLC in {selectedState.name} - ${selectedState.filingFee + 50}</span>
+                    <span className="relative z-10">Form LLC in {selectedState.name} - ${selectedState.filingFee + 180}</span>
                   </Button>
                   <ContactButton
                     variant="whatsapp"
@@ -235,7 +235,7 @@ export default function StateSelector({ onGetStarted }: StateSelectorProps = {})
                     Get Free Consultation
                   </ContactButton>
                   <p className="text-xs text-slate-500 text-center">
-                    Total: ${selectedState.filingFee} state fee + $50 service fee
+                    Total: ${selectedState.filingFee} state fee + $180 service fee
                   </p>
                 </div>
               </div>

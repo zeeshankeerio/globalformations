@@ -109,7 +109,7 @@ async function sendEmailWithFallbacks(data: ContactFormData): Promise<EmailServi
 async function sendViaFormspree(data: ContactFormData): Promise<EmailServiceResponse> {
   try {
     const formspreeEndpoint = process.env.FORMSPREE_ENDPOINT
-    const recipientEmail = process.env.CONTACT_EMAIL || 'zeeshan.keerio@mindscapeanalytics.com'
+    const recipientEmail = process.env.CONTACT_EMAIL || 'info@mindscapeanalytics.com'
     
     if (!formspreeEndpoint) {
       console.warn('FORMSPREE_ENDPOINT not configured')
@@ -170,7 +170,7 @@ async function sendViaEmailJS(data: ContactFormData): Promise<EmailServiceRespon
         template_id: 'template_contact',
         user_id: 'public_key_here',
         template_params: {
-          to_email: 'zeeshan.keerio@mindscapeanalytics.com',
+          to_email: process.env.CONTACT_EMAIL || 'info@mindscapeanalytics.com',
           from_name: `${data.firstName} ${data.lastName}`,
           from_email: data.email,
           phone: data.phone || 'Not provided',

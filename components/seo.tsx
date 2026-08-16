@@ -10,8 +10,8 @@ interface SEOProps {
 }
 
 export default function SEO({
-  title = "Mindscape Global Formations - Start Your U.S. LLC in 1 Day | $50 + State Fee",
-  description = "Fast, affordable, and reliable LLC formation service by Mindscape Analytics. Get a U.S. bank account, PayPal setup, and free business consultation. Starting at $50 + state fees.",
+  title = "Mindscape Global Formations - Start Your U.S. LLC in 1 Day | $180 + State Fee",
+  description = "Fast, affordable, and reliable LLC formation service by Mindscape Analytics. Get a U.S. bank account, PayPal setup, and free business consultation. Starting at $180 + state fees.",
   keywords = "LLC Formation, Start U.S. Business, Open PayPal Account, Amazon Seller LLC, Business Formation, Mindscape Analytics",
   image = "/placeholder-logo.png",
   url = "https://ll.mindscapeanalytics.com",

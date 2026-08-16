@@ -52,8 +52,8 @@ export default function FAQPage() {
       icon: DollarSign,
       questions: [
         {
-          question: "What's included in your $50 starting price?",
-          answer: "Our $50 starter package includes LLC formation, operating agreement, free consultation, and email support. State fees are separate and vary by state (typically $50-$500). We keep our service fee separate from state fees for complete transparency."
+          question: "What's included in your $180 starting price?",
+          answer: "Our $180 starter package includes LLC formation, operating agreement, free consultation, and email support. State fees are separate and vary by state (typically $50-$500). We keep our service fee separate from state fees for complete transparency."
         },
         {
           question: "Are there any hidden fees?",
@@ -162,7 +162,7 @@ export default function FAQPage() {
   const popularQuestions = [
     {
       question: "How much does it cost to form an LLC?",
-      answer: "Our service starts at $50 plus state fees (typically $50-$500). State fees vary by state and are mandatory government charges. We keep our service fee separate for complete transparency."
+      answer: "Our service starts at $180 plus state fees (typically $50-$500). State fees vary by state and are mandatory government charges. We keep our service fee separate for complete transparency."
     },
     {
       question: "How long does the entire process take?",
@@ -174,7 +174,7 @@ export default function FAQPage() {
     },
     {
       question: "What's the difference between your packages?",
-      answer: "Starter ($50): Basic LLC formation. Standard ($199): Includes EIN and priority support. Premium ($399): Includes banking, payment processing, and business training. All packages include free consultation."
+      answer: "Starter ($180): Basic LLC formation. Standard ($320): Includes EIN and priority support. Premium ($530): Includes banking, payment processing, and business training. All packages include free consultation."
     }
   ]
 

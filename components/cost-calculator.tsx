@@ -44,25 +44,25 @@ export default function CostCalculator({ onGetStarted }: CostCalculatorProps = {
     {
       id: "starter",
       name: "Starter",
-      basePrice: 50,
-      description: "Basic LLC formation",
+      basePrice: 180,
+      description: "Premium launch package",
       features: ["LLC Formation", "Operating Agreement", "Free Consultation"]
     },
     {
       id: "standard",
       name: "Standard",
-      basePrice: 199,
-      description: "Most popular package",
+      basePrice: 320,
+      description: "Most popular growth package",
       features: ["Everything in Starter", "EIN Application", "Priority Support"],
       popular: true
     },
     {
       id: "premium",
       name: "Premium",
-      basePrice: 399,
-      description: "Complete business setup",
+      basePrice: 530,
+      description: "Executive business platform",
       features: ["Everything in Standard", "Bank Account Setup", "Payment Processing"],
-      savings: 299
+      savings: 350
     }
   ]
 

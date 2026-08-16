@@ -17,7 +17,7 @@ export default function StickyCTABar() {
     llc: {
       icon: Building2,
       title: "Ready to start your LLC?",
-      subtitle: "From $50 + state fee • Same-day processing",
+      subtitle: "From $180 + state fee • Same-day processing",
       buttonText: "Start Now",
       buttonLink: "/pricing",
       ctaButton: "Free Call",
@@ -108,7 +108,7 @@ export default function StickyCTABar() {
               <div className="font-semibold text-xs sm:text-sm truncate">{currentServiceData.title}</div>
               <div className="text-xs text-blue-100 hidden sm:block">{currentServiceData.subtitle}</div>
               <div className="text-xs text-blue-100 sm:hidden truncate">
-                {currentService === 'llc' ? 'From $50' : 'Custom Solutions'}
+                {currentService === 'llc' ? 'From $180' : 'Custom Solutions'}
               </div>
             </div>
           </div>

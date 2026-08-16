@@ -5,7 +5,7 @@
  * All Rights Reserved - Proprietary and Confidential
  * 
  * Unauthorized copying, modification, or distribution is strictly prohibited.
- * Contact: zeeshan.keerio@mindscapeanalytics.com
+ * Contact: info@mindscapeanalytics.com
  */
 
 "use client"
@@ -185,15 +185,15 @@ export default function HomePage() {
                       LIMITED
                     </div>
                     <div className="text-center">
-                      <div className="text-4xl font-black text-black mb-1">$50</div>
+                      <div className="text-4xl font-black text-black mb-1">$180</div>
                       <div className="text-slate-600 text-sm font-semibold mb-3">+ State Fee</div>
                       <div className="inline-flex items-center gap-1 text-blue-700 text-xs font-bold bg-blue-50 px-2 py-1 rounded-full border border-blue-200 mb-3">
                         <CheckCircle className="w-3 h-3" />
-                        No Hidden Fees
+                        Premium Launch
                       </div>
                       <div className="text-xs text-slate-500">
-                        <span className="line-through">$199</span>
-                        <span className="text-red-600 font-bold ml-1">Save $149</span>
+                        <span className="line-through">$530</span>
+                        <span className="text-red-600 font-bold ml-1">Save $350</span>
                       </div>
                     </div>
                   </div>
@@ -323,7 +323,7 @@ export default function HomePage() {
                       <div className="flex items-center justify-between">
                         <span className="text-slate-600 font-medium">Starting Price</span>
                         <div className="text-right">
-                          <div className="text-2xl font-bold text-slate-900">$50</div>
+                          <div className="text-2xl font-bold text-slate-900">$180</div>
                           <div className="text-slate-500 text-xs">+ State Filing Fee</div>
                         </div>
                       </div>

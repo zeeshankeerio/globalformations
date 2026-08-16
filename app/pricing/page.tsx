@@ -38,9 +38,9 @@ export default function PricingPage() {
   const packages: Package[] = [
     {
       name: "Starter",
-      price: "$50",
+      price: "$180",
       subtitle: "+ State Fee",
-      description: "Perfect for getting started with basic LLC formation",
+      description: "A premium launch package for founders ready to form their LLC quickly",
       popular: false,
       features: [
         { name: "LLC Formation", included: true },
@@ -59,9 +59,9 @@ export default function PricingPage() {
     },
     {
       name: "Standard",
-      price: "$199",
-      subtitle: "Complete Package",
-      description: "Most popular choice with essential business tools",
+      price: "$320",
+      subtitle: "Growth Package",
+      description: "Most popular choice with essential business infrastructure and support",
       popular: true,
       features: [
         { name: "LLC Formation", included: true },
@@ -80,9 +80,9 @@ export default function PricingPage() {
     },
     {
       name: "Premium",
-      price: "$399",
-      subtitle: "All-Inclusive",
-      description: "Everything you need to launch and scale your business",
+      price: "$530",
+      subtitle: "Executive Platform",
+      description: "A complete business-launch system built for scaling and long-term growth",
       popular: false,
       features: [
         { name: "LLC Formation", included: true },

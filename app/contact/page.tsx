@@ -89,10 +89,10 @@ export default function ContactPage() {
                       <h3 className="font-bold text-slate-900">Email Support</h3>
                       <Badge className="bg-blue-100 text-blue-700 text-xs border-blue-200">2 Hour Response</Badge>
                     </div>
-                    <p className="text-slate-600 mb-2">zeeshan.keerio@mindscapeanalytics.com</p>
+                    <p className="text-slate-600 mb-2">Email</p>
                     <p className="text-sm text-slate-500 mb-3">Detailed responses during business hours</p>
                     <Button
-                      onClick={() => window.location.href = 'mailto:zeeshan.keerio@mindscapeanalytics.com?subject=LLC Formation Inquiry'}
+                      onClick={() => window.location.href = 'mailto:info@mindscapeanalytics.com?subject=LLC Formation Inquiry'}
                       variant="outline"
                       className="border-blue-300 text-blue-700 hover:bg-blue-50"
                     >
@@ -171,7 +171,7 @@ export default function ContactPage() {
                     Schedule via WhatsApp
                   </Button>
                   <Button
-                    onClick={() => window.location.href = 'mailto:zeeshan.keerio@mindscapeanalytics.com?subject=Free Consultation Request'}
+                    onClick={() => window.location.href = 'mailto:info@mindscapeanalytics.com?subject=Free Consultation Request'}
                     variant="outline"
                     className="border-slate-300 text-slate-700 hover:bg-slate-50"
                   >

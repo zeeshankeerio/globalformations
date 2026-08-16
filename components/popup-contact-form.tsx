@@ -67,7 +67,7 @@ export default function PopupContactForm({ isOpen, onClose, selectedPackage, pac
       // Validate form data
       const validatedData = legacyContactFormSchema.parse(data)
 
-      // Send email to zeeshan.keerio@mindscapeanalytics.com
+      // Send email to the company inbox
       await sendContactEmail(validatedData)
 
       // Also send WhatsApp message if phone is provided
@@ -212,7 +212,7 @@ ${data.message}
 🏢 Mindscape Global Formations
         `
 
-        const mailtoLink = `mailto:zeeshan.keerio@mindscapeanalytics.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`
+        const mailtoLink = `mailto:info@mindscapeanalytics.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`
         window.open(mailtoLink, '_blank')
 
         return { success: true, service: 'Mailto Fallback' }
@@ -584,19 +584,19 @@ From: ll.mindscapeanalytics.com (Popup Form)
                     <SelectItem value="starter" className="text-slate-900 hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-100 rounded-md m-1">
                       <div className="flex items-center justify-between w-full">
                         <span className="font-medium text-sm">Starter Package</span>
-                        <Badge className="ml-2 bg-gradient-to-r from-blue-100 to-blue-200 text-blue-700 border-0 text-xs">$50</Badge>
+                        <Badge className="ml-2 bg-gradient-to-r from-blue-100 to-blue-200 text-blue-700 border-0 text-xs">$180</Badge>
                       </div>
                     </SelectItem>
                     <SelectItem value="standard" className="text-slate-900 hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 rounded-md m-1">
                       <div className="flex items-center justify-between w-full">
                         <span className="font-medium text-sm">Standard Package</span>
-                        <Badge className="ml-2 bg-gradient-to-r from-blue-100 to-indigo-100 text-blue-700 border-0 text-xs">$150</Badge>
+                        <Badge className="ml-2 bg-gradient-to-r from-blue-100 to-indigo-100 text-blue-700 border-0 text-xs">$320</Badge>
                       </div>
                     </SelectItem>
                     <SelectItem value="premium" className="text-slate-900 hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-100 rounded-md m-1">
                       <div className="flex items-center justify-between w-full">
                         <span className="font-medium text-sm">Premium Package</span>
-                        <Badge className="ml-2 bg-gradient-to-r from-blue-100 to-blue-200 text-blue-700 border-0 text-xs">$250</Badge>
+                        <Badge className="ml-2 bg-gradient-to-r from-blue-100 to-blue-200 text-blue-700 border-0 text-xs">$530</Badge>
                       </div>
                     </SelectItem>
                     <SelectItem value="amazon" className="text-slate-900 hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 rounded-md m-1">

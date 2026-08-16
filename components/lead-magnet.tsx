@@ -735,7 +735,7 @@ export default function LeadMagnet({ onGetStarted }: LeadMagnetProps = {}) {
                 </Button>
 
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-blue-600">Starting at $50</div>
+                  <div className="text-2xl font-bold text-blue-600">Starting at $180</div>
                   <div className="text-sm text-slate-500">+ State Fee • No Hidden Costs</div>
                 </div>
               </div>
